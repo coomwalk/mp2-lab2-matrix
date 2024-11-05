@@ -1,0 +1,2 @@
+set(target_sample "sample_ex")
+add_executable( "${target_sample}" "sample_matrix.cpp")

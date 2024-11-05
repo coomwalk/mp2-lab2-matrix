@@ -1,0 +1,29 @@
+cmake_minimum_required(VERSION 3.8)
+
+set(PROJECT_NAME "First_cmake_and_lab2")
+project(${PROJECT_NAME})
+
+set(CMAKE_CXX_STANDARD 17)
+
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+
+
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include" "gtest")
+
+
+add_subdirectory(gtest)
+add_subdirectory(samples)
+add_subdirectory(test)
+
+
+
+
+
+message(STATUS "Sborochka_message")
+message(STATUS "=================")
+message(STATUS ${PROJECT_NAME})
+message(STATUS "=================")
+

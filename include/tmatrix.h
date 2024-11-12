@@ -85,7 +85,7 @@ public:
   // индексация с контролем
   T& at(size_t ind)
   {
-    if (ind >= sz) throw out_of_range("Index out of range");
+    if (ind >= sz ) throw out_of_range("Index out of range");
     return pMem[ind];
   }
   const T& at(size_t ind) const

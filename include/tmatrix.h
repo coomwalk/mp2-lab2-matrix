@@ -224,23 +224,8 @@ public:
   // сравнение
   bool operator==(const TDynamicMatrix& m) const noexcept
   {
-    if(this == &m) return true;
-    if (sz != m.sz)
-      {
-          return false;
-      }
-      else
-      {
-          for (size_t i = 0; i < sz; i++)
-          {
-              if (pMem[i] != m.pMem[i])
-              {
-                  return false;
-              }
-          }
-      }
 
-      return true;
+      return (*pMem == *m.pMem);/////////? /// все через наслед
   }
 
   bool operator!=(const TDynamicMatrix& m) const noexcept
@@ -266,9 +251,7 @@ public:
   // матрично-скалярные операции
   TDynamicMatrix operator*(const T& val)
   {
-    TDynamicMatrix tmp(sz);
-    for (size_t i = 0; i < sz; i++)
-      tmp.pMem[i] = pMem[i] * val;
+    TDynamicMatrix tmp(val*pMem);
     return tmp;
   }
   
